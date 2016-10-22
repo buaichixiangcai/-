@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title></title>
+	<style type="text/css">
+	*{
+		margin: 0;padding: 0;font-size: 35px;
+		list-style: none;
+	}
+	.as{
+		width: 300px;
+		margin: auto;
+	}
+	.cs span{
+		height: 30px;
+		width: 98px;
+		border: 1px solid red;
+		float: left;
+		cursor: pointer;
+	}
+	.cs{
+		overflow: hidden;
+	}
+	li{
+		width: 298px;
+		height: 300px;
+		border: 1px solid red;
+		display: none;
+	}
+	.b1{
+		display: block;
+	}
+	.a1{
+		background: #3c3c3c;
+	}
+	</style>
+</head>
+<body>
+	<div class="as">
+		<h1 class="cs">
+			<span class="a1">text1</span>
+			<span>text2</span>
+			<span>text3</span>
+		</h1>
+		<ul id="bs">
+			<li class="b1">text1</li>
+			<li >text2</li>
+			<li >text3</li>
+		</ul>
+	</div>
+</body>
+	<script type="text/javascript">
+	var spans=document.getElementsByTagName("span");
+	var bs=document.getElementById("bs");
+	var lis=bs.getElementsByTagName("li");
+	// spans[0].onclick=function(){
+	// 	spans[0].className="a1";
+	// 	lis[0].className="b1";
+	// 	spans[1].className="";
+	// 	lis[1].className="";
+	// 	spans[2].className="";
+	// 	lis[2].className="";
+	// }
+	// spans[1].onclick=function(){
+	// 	spans[1].className="a1";
+	// 	lis[1].className="b1";
+	// 	spans[0].className="";
+	// 	lis[0].className="";
+	// 	spans[2].className="";
+	// 	lis[2].className="";
+	// }
+	// spans[2].onclick=function(){
+	// 	spans[2].className="a1";
+	// 	lis[2].className="b1";
+	// 	spans[0].className="";
+	// 	lis[0].className="";
+	// 	spans[1].className="";
+	// 	lis[1].className="";
+	// }
+	for (var i = 0; i <spans.length; i++) {
+	spans[i].onmouseover=function(){
+		for (var i = 0; i < lis.length; i++) {
+			if(spans[i]==this){
+				spans[i].className="a1";
+				lis[i].className="b1";
+			}else{
+				spans[i].className="";
+				lis[i].className="";
+			}
+		};
+	}
+	};
+	// function remov(){
+	// 	spans[0].className="";
+	// 	lis[0].className="";
+	// 	spans[1].className="";
+	// 	lis[1].className="";
+	// 	spans[2].className="";
+	// 	lis[2].className="";
+	// }
+	// spans[0].onclick=function(){
+	// 	remov();
+	// 	spans[0].className="a1";
+	// 	lis[0].className="b1";
+	// }
+	// spans[1].onclick=function(){
+	// 	remov();
+	// 	spans[1].className="a1";
+	// 	lis[1].className="b1";
+	// }
+	// spans[2].onclick=function(){
+	// 	remov();
+	// 	spans[2].className="a1";
+	// 	lis[2].className="b1";
+	// }remov的顺序，先都是空的
+	</script>
+</html>
